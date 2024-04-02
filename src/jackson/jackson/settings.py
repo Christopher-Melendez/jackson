@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
 
-    'index', 'images', 
+    'index', 
 ]
 
 SITE_ID = 1
