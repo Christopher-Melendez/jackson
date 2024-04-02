@@ -1,0 +1,506 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-02 12:58-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\index\forms.py:8
+msgid "Name"
+msgstr "Nombre"
+
+#: .\index\forms.py:9
+msgid "Email"
+msgstr "Correo Electrónico"
+
+#: .\index\forms.py:10
+msgid "Phone Number"
+msgstr "Número de Teléfono"
+
+#: .\index\forms.py:11
+msgid "Let us know how we can help!"
+msgstr "¡Cuéntenos cómo podemos ayudarlo!"
+
+#: .\index\forms.py:11
+msgid "Message"
+msgstr "Mensaje"
+
+#: .\index\templates\about.html:3
+msgid "Eye Doctor and Opticians Serving Jackson Heights for Over Three Decades"
+msgstr ""
+"Oculisto y Ópticos que Sirven a Jackson Heights por Más de Tres Décadas"
+
+#: .\index\templates\about.html:12 .\index\templates\base.html:122
+msgid "About Us"
+msgstr "Acerca de Nosotros"
+
+#: .\index\templates\about.html:15
+msgid ""
+"\n"
+"                Lens Lab Express has been helping patients look and see "
+"their best for over three decades now! We're a small latina woman owned "
+"business\n"
+"                that takes pride in delivering excellent patient "
+"experiences. We make sure that our exceptional doctor leaves you seeing the "
+"best, and\n"
+"                our amazing opticians leave you looking your best!\n"
+"                "
+msgstr ""
+"\n"
+"                Lens Lab Express ha estado ayudando a nuestros pacientes ver "
+"y sentirse lo mejor posible por más de tres décadas. Somos un pequeño "
+"negocio operado por mujeres latinas\n"
+"                que se enorgullece de ofrecer excelentes experiencias para "
+"nuestros pacientes. Nos aseguramos de que nuestro doctor le deje viendo lo "
+"mejor y\n"
+"                nuestros ópticos le dejen luciendo lo mejor posible.\n"
+"                "
+
+#: .\index\templates\about.html:23
+msgid "Meet the team today and schedule your eye exam with us!"
+msgstr "¡Conozca al equipo hoy y programe su examen de la vista con nosotros!"
+
+#: .\index\templates\about.html:27 .\index\templates\base.html:132
+#: .\index\templates\home.html:136
+msgid "Make an Appointment"
+msgstr "Haga una Cita"
+
+#: .\index\templates\about.html:55
+msgid "Our Services"
+msgstr "Nuestros Servicios"
+
+#: .\index\templates\about.html:58
+msgid "Comprehensive Eye Examinations"
+msgstr "Exámenes Oculares Completos"
+
+#: .\index\templates\about.html:59
+msgid ""
+"\n"
+"                Regular eye exams are a cornerstone of maintaining vibrant, "
+"healthy eyes, essential for both adults and \n"
+"                children. Some conditions progress silently, causing no "
+"discomfort or vision impairment. Early detection \n"
+"                is our focus, reducing risks and broadening treatment "
+"choices. Our comprehensive exams encompass a range \n"
+"                of assessments, including:\n"
+"                <ul>\n"
+"                    <li>Optical Coherence Tomography</li>\n"
+"                    <li>Visual Field Test</li>\n"
+"                    <li>Fundus Photo Exam</li>\n"
+"                    <li>B-Scan</li>\n"
+"                    <li>Pachymetry</li>\n"
+"                    <li>Dilation</li>\n"
+"                    <li>Exterior Photos of the Eye</li>\n"
+"                    <li>Slit lamp examination</li>\n"
+"                    <li>Refraction for glasses and contact lenses</li>\n"
+"                    <li>Glaucoma pressure testing</li>\n"
+"                    <li>Diabetic evaluations</li>\n"
+"                    <li>Series of advanced computerized tests for a "
+"comprehensive evaluation of eye health.</li>\n"
+"                </ul>\n"
+"                "
+msgstr ""
+"\n"
+"                Los exámenes regulares de la vista son fundamentales para "
+"mantener ojos vibrantes y saludables, esenciales tanto para adultos como "
+"para \n"
+"                niños. Algunas condiciones progresan silenciosamente, sin "
+"causar molestias o deterioro de la visión. La detección temprana \n"
+"                es nuestro enfoque, reduciendo riesgos y ampliando las "
+"opciones de tratamiento. Nuestros exámenes completos abarcan una gama \n"
+"                de evaluaciones, incluyendo:\n"
+"                <ul>\n"
+"                    <li>Tomografía de Coherencia Óptica</li>\n"
+"                    <li>Prueba del Campo Visual</li>\n"
+"                    <li>Examen Fotográfico del Fondo del Ojo</li>\n"
+"                    <li>Ecografía Ocular (B-Scan)</li>\n"
+"                    <li>Paquimetría</li>\n"
+"                    <li>Dilatación de la Pupila</li>\n"
+"                    <li>Fotografías Exteriores del Ojo</li>\n"
+"                    <li>Examen Biomicroscópico (Lámpara de Hendidura)</li>\n"
+"                    <li>Refracción para anteojos y lentes de contacto</li>\n"
+"                    <li>Prueba de Presión Ocular para Glaucoma</li>\n"
+"                    <li>Evaluaciones Diabéticas</li>\n"
+"                    <li>Serie de pruebas computarizadas avanzadas para una "
+"evaluación completa de la salud ocular.</li>\n"
+"                </ul>\n"
+"                "
+
+#: .\index\templates\about.html:83
+msgid "Contact Lens Exam and Fittings"
+msgstr "Examen y Adaptación de Lentes de Contacto"
+
+#: .\index\templates\about.html:84
+msgid ""
+"\n"
+"                Thanks to remarkable advances in optical technology, contact "
+"lenses are now a versatile option for almost \n"
+"                everyone. This includes those with astigmatism and those "
+"seeking multifocal lenses. We provide a comprehensive\n"
+"                selection of contact lenses, including daily disposables, "
+"extended-wear soft lenses, and gas permeable \n"
+"                contacts.\n"
+"                "
+msgstr ""
+"\n"
+"                Gracias a los notables avances en tecnología óptica, los "
+"lentes de contacto son ahora una opción versátil para casi \n"
+"                todos. Esto incluye a aquellos con astigmatismo y aquellos "
+"que buscan lentes multifocales. Ofrecemos una selección completa\n"
+"                de lentes de contacto, incluyendo desechables diarios, "
+"lentes de uso prolongado y lentes de contacto permeables al gas.\n"
+"                "
+
+#: .\index\templates\about.html:93
+msgid "Optical Fitting, Adjusting, and Repairs"
+msgstr "Ajuste y Reparación de Anteojos"
+
+#: .\index\templates\about.html:95
+msgid ""
+"\n"
+"                Our optical specialists at Lens Lab Express are committed to "
+"helping every patient discover eyewear that \n"
+"                harmonizes with their unique style and lifestyle. We're well-"
+"versed in the latest lens technologies and \n"
+"                adept at merging your lifestyle with lens tech to create "
+"eyewear that is truly individual. Explore our \n"
+"                diverse selection of styles to satisfy your personal taste.\n"
+"                "
+msgstr ""
+"\n"
+"                Nuestros especialistas ópticos en Lens Lab Express están "
+"comprometidos a ayudar a cada paciente a descubrir anteojos que \n"
+"                armonicen con su estilo de vida único. Estamos bien versados "
+"en las últimas tecnologías de lentes y \n"
+"                hábiles en combinar su estilo de vida con la tecnología de "
+"lentes para crear anteojos que sean verdaderamente individuales. Explore \n"
+"                nuestra diversa selección de estilos para satisfacer su "
+"gusto personal.\n"
+"                "
+
+#: .\index\templates\about.html:104
+msgid "Repairs and Adjustments"
+msgstr "Reparaciones y Ajustes"
+
+#: .\index\templates\about.html:106
+msgid ""
+"\n"
+"                At Lens Lab Express, we understand that things happen. Our "
+"highly trained opticians are here to help. \n"
+"                We offer adjustments for your eyeglasses whenever they feel "
+"uncomfortable or ill-fitting. Stop by at any \n"
+"                time, and we'll ensure your glasses are cleaned, smudge-"
+"free, and providing clear vision. If your frames, \n"
+"                nose pads, temples, or screws need repair, we've got you "
+"covered.\n"
+"                "
+msgstr ""
+"\n"
+"                En Lens Lab Express, entendemos que las cosas suceden. "
+"Nuestros ópticos altamente capacitados están aquí para ayudar. \n"
+"                Ofrecemos ajustes para sus anteojos siempre que se sientan "
+"incomodos o mal ajustados. Pase por aquí en cualquier \n"
+"                momento, y nos aseguraremos de que sus anteojos estén "
+"limpios, sin manchas y proporcionando una visión clara. Si sus monturas, \n"
+"                almohadillas nasales, varillas o tornillos necesitan "
+"reparación, nosotros lo tenemos cubierto.\n"
+"                "
+
+#: .\index\templates\about.html:116
+msgid "Optical 1 Hour Service"
+msgstr "Servicio Óptico de 1 Hora"
+
+#: .\index\templates\about.html:118
+msgid ""
+"\n"
+"                When you need new glasses, you shouldn't have to wait. "
+"Experience the convenience of our Optical 1 Hour \n"
+"                Service, available for most prescriptions, ensuring you'll "
+"have your glasses made while you wait.\n"
+"                "
+msgstr ""
+"\n"
+"                Cuando necesite anteojos nuevos, no debería tener que "
+"esperar. Disfruta la conveniencia de nuestro Servicio Óptico de 1 Hora \n"
+"                disponible para la mayoría de las recetas, asegurando que "
+"tendrá sus anteojos hechos mientras espera.\n"
+"                "
+
+#: .\index\templates\about.html:132
+msgid "Contact Us"
+msgstr "Contáctenos"
+
+#: .\index\templates\about.html:139
+msgid ""
+"\n"
+"                    Your message has been received! Give us 24-48 hours to "
+"get back to you. If you think\n"
+"                    we're taking too long, don't hesitate to <a href="
+"\"tel:7184783539\">call</a> our office for any questions or for "
+"appointments.\n"
+"                    "
+msgstr ""
+"\n"
+"                ¡Su mensaje ha sido recibido! Permítanos 24-48 horas para "
+"responderle. Si piensa\n"
+"                que estamos tardando demasiado, no dude en <a href="
+"\"tel:7184783539\">llamar</a> a nuestra oficina para cualquier pregunta o "
+"para hacer\n"
+"                citas.\n"
+"                "
+
+#: .\index\templates\article.html:12 .\index\templates\base.html:128
+#: .\index\templates\library.html:3 .\index\templates\library.html:10
+msgid "Eyecare Library"
+msgstr "Biblioteca Ocular"
+
+#: .\index\templates\article.html:13 .\index\templates\library.html:11
+msgid ""
+"Find answers to your questions on contact lens care, glasses options, "
+"cataracts and more!"
+msgstr ""
+"Encuentre respuestas a sus preguntas sobre el cuidado de lentes de contacto, opciones de gafas, "
+"cataratas y más!"
+
+#: .\index\templates\article.html:14 .\index\templates\library.html:12
+msgid "Check back every month for our latest release!"
+msgstr "¡Mira nuestras ofertas más recientes!"
+
+#: .\index\templates\article.html:36 .\index\templates\article.html:73
+msgid "Categories:"
+msgstr "Categorías"
+
+#: .\index\templates\base.html:8
+msgid ""
+"Lens Lab Express in Jackson Heights, Queens has been offering the best in "
+"eyewear, contact lenses, and eye exams for over a decade."
+msgstr ""
+"Lens Lab Express en Jackson Heights, Queens ha estado ofreciendo lo mejor en "
+"gafas, lentes de contacto y exámenes de la vista durante más de una década."
+
+#: .\index\templates\base.html:119
+msgid "Home"
+msgstr "Inicio"
+
+#: .\index\templates\base.html:125
+msgid "Promotions"
+msgstr "Promociones"
+
+#: .\index\templates\base.html:164
+msgid "Our Hours"
+msgstr "Nuestras Horas"
+
+#: .\index\templates\base.html:166
+msgid "Monday"
+msgstr "Lunes"
+
+#: .\index\templates\base.html:167
+msgid "Tuesday"
+msgstr "Martes"
+
+#: .\index\templates\base.html:168
+msgid "Wednesday"
+msgstr "Miércoles"
+
+#: .\index\templates\base.html:169
+msgid "Thursday"
+msgstr "Jueves"
+
+#: .\index\templates\base.html:170
+msgid "Friday"
+msgstr "Viernes"
+
+#: .\index\templates\base.html:171
+msgid "Saturday"
+msgstr "Sábado"
+
+#: .\index\templates\base.html:172
+msgid "Sunday"
+msgstr "Domingo"
+
+#: .\index\templates\home.html:3
+msgid "Optical & Eye Doctor in Jackson Heights, Queens"
+msgstr "Óptica y Doctor De Ojos en Jackson Heights, Queens"
+
+#: .\index\templates\home.html:102
+msgid "Lens Lab Express"
+msgstr "Lens Lab Express"
+
+#: .\index\templates\home.html:103
+msgid "Eyeglasses, Eye Exams & Contact Lenses"
+msgstr "Gafas, Exámenes Oculares y Lentes De Contacto"
+
+#: .\index\templates\home.html:105
+msgid ""
+"\n"
+"                At Lens Lab Express, we pride ourselves with a wide variety "
+"of designer frames across various price points.\n"
+"                Additionally, we offer swift one-hour or next-day service "
+"for most prescriptions. Our doctors perform precision\n"
+"                contact lens fittings for sphere, astigmatic, and multifocal "
+"contact lens wearers. \n"
+"                \n"
+"                Our Commitment to comprehensive eyecare extends to annual "
+"diabetic eye examinations, thorough glaucoma screenings,\n"
+"                dry eye management, and a range of medical treatments to "
+"ensure your ocular health is in expert hands.\n"
+"                "
+msgstr ""
+"\n"
+"                En Lens Lab Express, ofrecemos un gran variedad de monturas "
+"y gafas de diseñador en diferentes rangos de precios.\n"
+"                Además, ofrecemos un servicio rapído de una hora o al día "
+"siguente para la mayoríá de recetas. Nuestros doctores realizan lo mejor y\n"
+"                más nueva atención en lentes de contactos para usarios de "
+"esféricosastigmáticos y multifocales. \n"
+"                \n"
+"                Nuestro equipo de doctores expertos controla toda su salud "
+"ocular, desde exámenes de detección de glaucoma, control del ojo seco,\n"
+"                casos de conjuntivitis y una variedad de tratamientos "
+"médicos para garantizar que su salud ocular esté en manos expertas.\n"
+"                "
+
+#: .\index\templates\home.html:122
+msgid "Blurry Vision Checks"
+msgstr "Chequeos de Visión Borrosa"
+
+#: .\index\templates\home.html:126
+msgid "Diabetes & Glaucoma Screenings"
+msgstr "Exámenes de Diabetes y Glaucoma"
+
+#: .\index\templates\home.html:131
+msgid "Medical Eye Care"
+msgstr "Cuidado Médico de los Ojos"
+
+#: .\index\templates\home.html:148
+msgid "Our Brands"
+msgstr "Nuestras Marcas"
+
+#: .\index\templates\home.html:160
+msgid "View More Brands"
+msgstr "Ver Más Marcas"
+
+#: .\index\templates\home.html:168
+msgid "Accepeted Insurances"
+msgstr "Seguros Aceptados"
+
+#: .\index\templates\home.html:208
+msgid ""
+"We also accept <strong>FSA</strong> plans (Flex Spending Accounts) and "
+"<strong>HSA</strong> plans (Health Spending Accounts)"
+msgstr ""
+"También aceptamos planes <strong>FSA</strong> (Cuentas de Gastos Flexibles) "
+"y planes <strong>HSA</strong> (Cuentas de Gastos de Salud)"
+
+#: .\index\templates\home.html:210
+msgid ""
+"If your plan is not mentioned, please call us and ask because we may accept "
+"it."
+msgstr ""
+"Si su plan no está mencionado, por favor llámenos y pregunte porque "
+"podríamos aceptarlo."
+
+#: .\index\templates\home.html:219
+msgid "What Our Patients Say"
+msgstr "Lo Que Dicen Nuestros Pacientes"
+
+#: .\index\templates\home.html:265
+msgid "Posted on"
+msgstr "Publicado en"
+
+#: .\index\templates\home.html:418
+msgid "Eyeing Some New Eyewear?"
+msgstr "¿Buscando Nuevos Anteojos?"
+
+#: .\index\templates\home.html:420
+msgid "Drop your email and get"
+msgstr "Deja su correo electrónico y obtén"
+
+#: .\index\templates\home.html:421
+#, python-format
+msgid "10%% OFF"
+msgstr ""
+
+#: .\index\templates\home.html:423
+msgid "Your next order with us!"
+msgstr "Su próximo pedido con nosotros!"
+
+#: .\index\templates\home.html:426
+msgid "Enter Email Address"
+msgstr "Pone Correo Electrónico"
+
+#: .\index\templates\home.html:427
+msgid "Get Now"
+msgstr "Obtén Ahora"
+
+#: .\index\templates\home.html:431
+msgid "Thanks for joining us!"
+msgstr "¡Gracias por unirte a nosotros!"
+
+#: .\index\templates\home.html:433
+msgid "Please present this code"
+msgstr "Por favor presenta este código"
+
+#: .\index\templates\home.html:436
+#, python-format
+msgid ""
+"Either in store, or online (coming soon) to get 10%% off your next purchase!"
+msgstr ""
+"¡Ya sea en la tienda o en línea (próximamente) para obtener un 10%% de "
+"descuento en su próxima compra!"
+
+#: .\index\templates\library.html:63
+msgid "Previous"
+msgstr "Anterior"
+
+#: .\index\templates\library.html:67
+msgid "Page"
+msgstr "Página"
+
+#: .\index\templates\library.html:67
+msgid "of"
+msgstr "de"
+
+#: .\index\templates\library.html:71
+msgid "Next"
+msgstr "Siguente"
+
+#: .\index\templates\promos.html:3
+msgid "Promotional Offers on Eyewear"
+msgstr "Ofertas Promocionales en anteojos"
+
+#: .\index\templates\promos.html:12
+msgid "Special Promotions"
+msgstr "Promociones"
+
+#: .\index\templates\promos.html:13
+msgid "Check out our latest offers!"
+msgstr "¡Mira nuestras ofertas más recientes!"
+
+#: .\index\templates\promos.html:30 .\index\templates\promos.html:57
+msgid "OFFER EXPIRED"
+msgstr "OFERTA CADUCADA"
+
+#: .\index\templates\promos.html:42 .\index\templates\promos.html:69
+msgid "Offer Expires:"
+msgstr "Oferta Vence el:"
+
+#~ msgid "Submit"
+#~ msgstr "Enviar"
+
+#, python-format
+#~ msgid "<strong>10%% OFF</strong>"
+#~ msgstr "<strong>¡10%% DE DESCUENTO!</strong>"

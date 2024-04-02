@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+    {% load i18n %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Lens Lab Express | {% block title %}{% endblock %}</title>
+    <meta name="description" content={% translate "Lens Lab Express in Jackson Heights, Queens has been offering the best in eyewear, contact lenses, and eye exams for over a decade." %}%>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/d7d7e05c87.js" crossorigin="anonymous"></script>
+    <!--Touch Swipe-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js'></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+    <!-- Favicon -->
+    {% comment %} 
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'images/favicon/apple-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'images/favicon/apple-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/favicon/apple-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'images/favicon/apple-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/favicon/apple-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'images/favicon/apple-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'images/favicon/apple-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'images/favicon/apple-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'images/favicon/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'images/favicon/favicon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'images/favicon/manifest.json' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'images/favicon/ms-icon-144x144.png' %}">
+    <meta name="theme-color" content="#ffffff"> 
+    {% endcomment %}
+
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
+
+
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js'></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
+
+
+</head>
+{% load i18n %}
+<body onload="checkCookie()">
+    <!-- Admin Access -->
+    {% if user.is_superuser %} 
+    <div class="col-sm-12 text-center padding-none">
+        <div style="background-color: #222;color: white;padding-top: 0.5rem;padding-bottom: 0.1rem;margin: 0;">
+            <a href="/admin/" class="btn btn-custom padding-around"> Dashboard </a>
+            <a href="/logout/" class="btn btn-custom padding-around"> Logout </a>
+        </div>
+    </div>
+    {% endif %}
+    <!-- End Admin Access -->
+
+
+    
+    <!--Annoucement Bar -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light text-center">
+        <div class="container">
+            
+            <!-- English to Spanish language switch -->
+            <form name="sl_form"class="navbar-brand mx-auto" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}">
+            
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                
+                {% if LANGUAGE_CODE == LANGUAGES.1.0 %}
+                    <input name="language" type="hidden" value="en">
+                    <input class ="slform" type="submit" value="Change Back To English">
+                    
+                {% else %}
+                    <input name="language" type="hidden" value="es">
+                    <input class ="slform" type="submit" value="¡Se Habla Español!">
+                {%endif%}
+            </form>
+
+                <style>
+                    .slform {
+                        padding: 0; 
+                        border: none; 
+                        background: none;
+                        color: #2378E0;
+                    }
+
+                    .slform:hover {
+                        color: #000;
+                    }
+                </style>
+        </div>
+      </nav>
+    <!-- End Announcement Bar-->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-light navcont sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img class="navimg" src="{% static 'images/logo_transp.png' %}"></a>
+           
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto align-middle">
+                    <li class="nav-item {% block activehome %}{% endblock %}">
+                        <a class="nav-link" href="/">{% translate "Home" %}</a>
+                    </li>
+                    <li class="nav-item {% block activeabout %}{% endblock %}">
+                        <a class="nav-link" href="/about/">{% translate "About Us" %}</a>
+                    </li>
+                    <li class="nav-item {% block activepromo %}{% endblock %}">
+                        <a class="nav-link" href="/promotions/">{% translate "Promotions" %}</a>
+                    </li>
+                    <li class="nav-item {% block activelibrary %}{% endblock %}">
+                        <a class="nav-link" href="/library/">{% translate "Eyecare Library" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://pcols.com/!MTQ1MQ"
+                        class="btn  btn-custom padding-around">{% translate "Make an Appointment" %}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Nav -->
+
+    <!-- Body Fill Area -->
+    {% block body-content %}
+    Error 159: Woops, We didn't See this happening. Guess we need a new pair of glasses huh?
+    {% endblock %}
+    <!-- End Fill Area -->
+
+
+    <!-- Footer -->
+    <footer>
+        <div id="footcont" class="container-fluid">
+            <div class="row text-center">
+                <div class="col-md-6">
+                    <img src="{% static 'images/logo_transp.png' %}">
+                    <hr class="light">
+                    <a href="tel:7184783539"><p>P: 718-478-3539</p></a>
+                    <p>F: 718-205-0963</p>
+                    {% comment %} <a href="mailto:lenslabexpressjacksonheights@gmail.com"><p>lenslabexpressjacksonheights@gmail.com</p></a> {% endcomment %}
+                    <a href='https://maps.app.goo.gl/kKG4AH2ejPxNJzys6'>
+                        <a href='https://maps.apple.com/?address=82-02%2037th%20Ave,%20Jackson%20Heights,%20NY%20%2011372,%20United%20States&auid=11177539839925481050&ll=40.749635,-73.884151&lsp=9902&q=Lens%20Lab%20Express&t=m'>
+                          <p>82-02 37th Ave.</p>
+                          <p>Jackson Heights, NY 11372</p></a></a>
+                </div>
+                <div class="col-md-6">
+                    <hr class="light">
+                    <h5>{% translate "Our Hours" %}</h5>
+                    <hr class="light">
+                    <p>{% translate "Monday" %}: {{ hours.monday}}</p>
+                    <p>{% translate "Tuesday" %}: {{ hours.tuesday}}</p>
+                    <p>{% translate "Wednesday" %}: {{ hours.wednesday}}</p>
+                    <p>{% translate "Thursday" %}: {{ hours.thursday}}</p>
+                    <p>{% translate "Friday" %}: {{ hours.friday}}</p>
+                    <p>{% translate "Saturday" %}: {{ hours.saturday}}</p>
+                    <p>{% translate "Sunday" %}: {{ hours.sunday}}</p>
+                </div>
+                <div class="col-12">
+                    <hr class="light-100">
+                    <a href="/"><h5>&copy; Lens Lab Express of Jackson Heights </h5></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footers -->
+
+</body>
+
+</html>

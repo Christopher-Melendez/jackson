@@ -1,0 +1,161 @@
+{% extends 'base.html'%}
+{% load i18n %}
+{% block title %}{{article.title}}{% endblock %}
+{% block activelibrary %}active{% endblock %}
+{% block body-content %}
+
+
+<!-- Start Libary Header -->
+
+    <div class="col-sm-12 text-center">
+        <div class="ltitle">
+            <a class="lita" href="/library/"><h1>{% translate "Eyecare Library" %}</h1></a>
+            <p class = "lip">{% translate "Find answers to your questions on contact lens care, glasses options, cataracts and more!" %}</p>
+            <p class = "lip">{% translate "Check back every month for our latest release!" %}</p>
+        </div>
+    </div>
+
+<!-- End Library Header -->
+
+<!-- Start Article -->
+<div class="spcont">
+{% if LANGUAGE_CODE == LANGUAGES.1.0 %}
+    <div class="row px-3">
+        <div class="col-sm-12 text-center">
+            <h2 class="card-title">{{article.es_title}}</h2>
+            <hr class ="mx-0"style="border: 1px solid #222;">
+        </div>
+    </div>
+
+    <div class="row px-3">
+        <div class="col-xs text-left">
+            <p class="text-muted" style=""><i class="fa-solid fa-calendar"></i> {{article.publish_date}}</p>
+        </div>
+        <div class="col-sm text-right">
+            <ul style="">
+                {% translate "Categories:" %} 
+                {% for tag in article.tags.all %}
+                <li class="tag-il"> {{tag.es_name}},</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <hr class ="mx-0"style="border: 1px solid #222;">
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <img style="max-width:80%"src="{{article.photo.url}}">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 ml-3 mr-5">
+            {% autoescape off %}
+                {{article.es_body}}
+            {% endautoescape %}
+
+        </div>
+    </div>
+{% else %}
+    <div class="row px-3">
+        <div class="col-sm-12 text-center">
+            <h2 class="card-title">{{article.en_title}}</h2>
+            <hr class ="mx-0"style="border: 1px solid #222;">
+        </div>
+    </div>
+
+    <div class="row px-3">
+        <div class="col-xs text-left">
+            <p class="text-muted" style=""><i class="fa-solid fa-calendar"></i> {{article.publish_date}}</p>
+        </div>
+        <div class="col-sm text-right">
+            <ul style="">
+                {% translate "Categories:" %} 
+                {% for tag in article.tags.all %}
+                <li class="tag-il"> {{tag.en_name}},</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <hr class ="mx-0"style="border: 1px solid #222;">
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <img style="max-width:80%"src="{{article.photo.url}}">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 ml-3 mr-5">
+            {% autoescape off %}
+                {{article.en_body}}
+            {% endautoescape %}
+
+        </div>
+    </div>
+
+{% endif %}
+</div>
+
+
+<!-- End Article -->
+
+
+
+
+<style>
+    @media (min-width: 1000px) {
+        .spcont {
+            padding: 100px;
+        }
+    
+    }
+
+    .tag-il {
+        display: inline-block;
+        /* background: rgba(83, 83, 83, 0.4); */
+        /* border-radius: 3px; */
+        padding: 2.5px 10px;
+        margin: 0 5px 5px 0;
+        cursor: default;
+        user-select: none;
+        /* transition: background-color 0.3s; */
+    }
+
+    .ltitle {
+        background-color: #2498DE; 
+        color: #222;
+        padding-top: 0.5rem;
+        padding-bottom: 0.1rem;
+        margin: 0;
+        border-radius: 15px;
+    }
+
+    .tag {
+        display: inline-block;
+        background: rgba(83, 83, 83, 0.4);
+        border-radius: 3px;
+        padding: 2.5px 10px;
+        margin: 0 5px 5px 0;
+        cursor: default;
+        user-select: none;
+        transition: background-color 0.3s;
+    }
+
+    .lip {
+      color:#FFF;
+    }
+
+    .lita {
+        color:#FFF;
+    }
+
+    .lita:hover {
+        color: #636363;
+    }
+
+
+</style>
+
+
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends 'base.html'%}
+{% load i18n %}
+{% block title %} {% translate "Promotional Offers on Eyewear" %} {% endblock %}
+{% block activepromo %}active{% endblock %}
+{% block body-content %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'promos.css' %}">
+
+<div class="col-sm-12 text-center padding-none">
+    <div class="ptitle">
+        <h1>{%translate "Special Promotions" %}</h1>
+        <p>{%translate "Check out our latest offers!" %}</p>
+    </div>
+</div>
+
+
+<div class="container-fluid padding">
+    <div class="row padding">
+
+        {% comment %} If Spanish {% endcomment %}
+        {% if LANGUAGE_CODE == LANGUAGES.1.0 %}
+            
+            {% for promo in promotions %}
+            <div class="col-sm-4">
+                <div class="card promo">
+                    {% if promo.status == "EX" %}
+                    <div class="card-img-overlay overlay-expired">
+                        <strong class="card-title">{%translate "OFFER EXPIRED" %}</strong>
+                    </div>
+                    {% endif %}
+                    <img class="card-img-top" src="{{promo.es_photo.url}}" alt={{promo.es_name}}>
+                    <div class="card-body">
+                        <h5 class="card-title">{{promo.es_name}}</h5>
+                        <p class="card-text">
+                            {{promo.es_description}}
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <p class="expiration">
+                            {%translate "Offer Expires:" %}
+                            <strong>{{promo.end_date}}</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        {% else %}
+
+            {% for promo in promotions %}
+            <div class="col-sm-4">
+                <div class="card promo">
+                    {% if promo.status == "EX" %}
+                    <div class="card-img-overlay overlay-expired">
+                        <strong class="card-title">{%translate "OFFER EXPIRED" %}</strong>
+                    </div>
+                    {% endif %}
+                    <img class="card-img-top" src="{{promo.en_photo.url}}" alt={{promo.en_name}}>
+                    <div class="card-body">
+                        <h5 class="card-title">{{promo.en_name}}</h5>
+                        <p class="card-text">
+                            {{promo.en_description}}
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <p class="expiration">
+                            {%translate "Offer Expires:" %}
+                            <strong>{{promo.end_date}}</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        {%endif%}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

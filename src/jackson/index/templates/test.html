@@ -1,0 +1,132 @@
+{% extends 'base.html'%}
+{% block title %}ADMIN TEST SITE{% endblock %}
+{% block body-content %}
+
+
+
+<div class="container-fluid padding">
+    <div class ="row mx-auto my-auto">
+        <h3 class="mx-auto mt-3">What Our Patients Say</h3>
+    </div>
+    <div id="reviewCarousel" class="carousel slide rv" data-ride="carousel">
+        <div class="carousel-inner rv" role="listbox">
+          
+        <!-- Carousel Item -->
+        {% for review in reviews %}
+          <div class="carousel-item {% if forloop.first %}active{% endif %} rv">
+            <div class="col-md-4">
+                <div class="card card-body">
+                        
+                        <div>
+                            <a href="{{review.link}}">
+                                <img style="max-width:40px; max-height:40px;" src="{{review.img}}" alt="profile image"> 
+                                {{review.author}}
+                            </a>
+                                <i style="color:#FFD700"class="fa-solid fa-star"></i>
+                                <i style="color:#FFD700"class="fa-solid fa-star"></i>
+                                <i style="color:#FFD700"class="fa-solid fa-star"></i>
+                                <i style="color:#FFD700"class="fa-solid fa-star"></i>
+                                <i style="color:#FFD700"class="fa-solid fa-star"></i>
+                        </div>
+                        <div>
+                            <p>
+                                {{review.text}}    
+                            </p>
+                        </div>
+                        <div>
+                            
+                                <i class="fa-brands fa-google" style="background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+                                -webkit-background-clip: text;
+                                background-clip: text;
+                                color: transparent;
+                                -webkit-text-fill-color: transparent;"></i>
+                                <p>Posted on</p>
+                                <a href="{{review.link}}"><P>Google</P></a>
+                        </div>
+        
+                </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+</div>
+
+
+<script>
+
+$('#recipeCarousel').carousel({
+  interval: 10000
+})
+
+$('.carousel.rv .carousel-item.rv').each(function(){
+    var minPerSlide = 3;
+    var next = $(this).next();
+    if (!next.length) {
+    next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+    
+    for (var i=0;i<minPerSlide;i++) {
+        next=next.next();
+        if (!next.length) {
+        	next = $(this).siblings(':first');
+      	}
+        
+        next.children(':first-child').clone().appendTo($(this));
+      }
+});
+
+</script>
+
+<style>
+
+@media (max-width: 768px) {
+    .carousel-inner.rv .carousel-item.rv > div {
+        display: none;
+    }
+    .carousel-inner.rv .carousel-item.rv > div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner.rv .carousel-item.active.rv,
+.carousel-inner.rv .carousel-item-next.rv,
+.carousel-inner.rv .carousel-item-prev.rv {
+    display: flex;
+}
+
+/* display 3 */
+@media (min-width: 768px) {
+    
+    .carousel-inner.rv .carousel-item-right.active.rv,
+    .carousel-inner.rv .carousel-item-next.rv {
+      transform: translateX(33.333%);
+    }
+    
+    .carousel-inner.rv .carousel-item-left.active.rv, 
+    .carousel-inner.rv .carousel-item-prev.rv {
+      transform: translateX(-33.333%);
+    }
+}
+
+.carousel-inner.rv .carousel-item-right.rv,
+.carousel-inner.rv .carousel-item-left.rv{ 
+  transform: translateX(0);
+}
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

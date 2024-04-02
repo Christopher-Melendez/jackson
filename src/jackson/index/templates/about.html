@@ -1,0 +1,170 @@
+{% extends 'base.html'%}
+    {% load i18n %}
+{% block title %} {% translate "Eye Doctor and Opticians Serving Jackson Heights for Over Three Decades" %} {% endblock %}
+{% block activeabout %}active{% endblock %}
+{% block body-content %}
+
+
+<!-- About Us -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="text-center"> {% translate "About Us" %}</h2>
+            <hr class ="mx-auto"style="border: 1px solid #222; width: 80%">
+            <p>
+                {% blocktrans %}
+                Lens Lab Express has been helping patients look and see their best for over three decades now! We're a small latina woman owned business
+                that takes pride in delivering excellent patient experiences. We make sure that our exceptional doctor leaves you seeing the best, and
+                our amazing opticians leave you looking your best!
+                {% endblocktrans %}
+            </p>
+
+            <p>
+                {% translate "Meet the team today and schedule your eye exam with us!" %}
+            </p>
+
+            <a href="https://pcols.com/!MTQ1MQ"
+                        class="btn  btn-custom padding-around">{% translate "Make an Appointment" %}</a>
+        </div>
+
+        <div class="col-md-6 padding mx-auto text-center">
+            <div class="text-center mx-auto"style="max-width:100%;list-style:none; transition: none;overflow:hidden;width:500px;height:500px;">
+                <div class="text-center mx-auto"id="display-google-map" style="height:100%; width:100%;max-width:100%;">
+                    <iframe class="mx-auto text-center" style="height:100%;width:100%;border:0; border-radius: 4%;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Lens+Lab+Express,+Jackson+Heights,+Queens,+NY,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                </div>
+                <style>
+                    #display-google-map img.text-marker{
+                        max-width:none!important;
+                        background:none!important;
+                    }
+                    img{max-width:none
+                    }
+                </style>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+<!-- End About Us -->
+
+<!-- Services -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="ml-5 mr-5">
+            <h2 class="text-center">{% translate "Our Services" %}</h2>
+            <hr class ="mx-auto"style="border: 1px solid #222; width: 80%">
+
+            <h3>{% translate "Comprehensive Eye Examinations" %}</h3>
+            <p> {% blocktrans %}
+                Regular eye exams are a cornerstone of maintaining vibrant, healthy eyes, essential for both adults and 
+                children. Some conditions progress silently, causing no discomfort or vision impairment. Early detection 
+                is our focus, reducing risks and broadening treatment choices. Our comprehensive exams encompass a range 
+                of assessments, including:
+                <ul>
+                    <li>Optical Coherence Tomography</li>
+                    <li>Visual Field Test</li>
+                    <li>Fundus Photo Exam</li>
+                    <li>B-Scan</li>
+                    <li>Pachymetry</li>
+                    <li>Dilation</li>
+                    <li>Exterior Photos of the Eye</li>
+                    <li>Slit lamp examination</li>
+                    <li>Refraction for glasses and contact lenses</li>
+                    <li>Glaucoma pressure testing</li>
+                    <li>Diabetic evaluations</li>
+                    <li>Series of advanced computerized tests for a comprehensive evaluation of eye health.</li>
+                </ul>
+                {% endblocktrans %}
+            </p>
+            <br>
+
+
+            <h3>{% translate "Contact Lens Exam and Fittings" %}</h3>
+            <p>{% blocktrans %}
+                Thanks to remarkable advances in optical technology, contact lenses are now a versatile option for almost 
+                everyone. This includes those with astigmatism and those seeking multifocal lenses. We provide a comprehensive
+                selection of contact lenses, including daily disposables, extended-wear soft lenses, and gas permeable 
+                contacts.
+                {% endblocktrans %}
+            </p>
+            <br>
+
+            <h3>{% translate "Optical Fitting, Adjusting, and Repairs" %}</h3>
+            <p>
+                {%blocktrans %}
+                Our optical specialists at Lens Lab Express are committed to helping every patient discover eyewear that 
+                harmonizes with their unique style and lifestyle. We're well-versed in the latest lens technologies and 
+                adept at merging your lifestyle with lens tech to create eyewear that is truly individual. Explore our 
+                diverse selection of styles to satisfy your personal taste.
+                {%endblocktrans%}
+            </p>
+            <br>
+
+            <h3>{% translate "Repairs and Adjustments" %}</h3>
+            <p>
+                {% blocktrans %}
+                At Lens Lab Express, we understand that things happen. Our highly trained opticians are here to help. 
+                We offer adjustments for your eyeglasses whenever they feel uncomfortable or ill-fitting. Stop by at any 
+                time, and we'll ensure your glasses are cleaned, smudge-free, and providing clear vision. If your frames, 
+                nose pads, temples, or screws need repair, we've got you covered.
+                {% endblocktrans %}
+            </p>
+            <br>
+            
+
+            <h3>{% translate "Optical 1 Hour Service" %}</h3>
+            <p>
+                {% blocktrans %}
+                When you need new glasses, you shouldn't have to wait. Experience the convenience of our Optical 1 Hour 
+                Service, available for most prescriptions, ensuring you'll have your glasses made while you wait.
+                {% endblocktrans %}
+            </p>
+
+        </div>
+    </div>
+</div>
+<hr>
+<!-- End Services -->
+
+
+<!-- Contact Us -->
+    <h2 class="text-center"> {% translate "Contact Us" %}</h2>
+                <hr class ="mx-auto"style="border: 1px solid #222; width: 80%">
+    <div class="container-fluid">
+        <div class="row">
+            {% if form_sent %}
+            <div class="mx-auto mb-2 p-2 text-center" style="width: 80%; border: solid; border-radius: 3%;">
+                <p>
+                    {% blocktrans %}
+                    Your message has been received! Give us 24-48 hours to get back to you. If you think
+                    we're taking too long, don't hesitate to <a href="tel:7184783539">call</a> our office for any questions or for appointments.
+                    {% endblocktrans %}
+                </p>
+            </div>
+            {% else %}
+            <div class="mx-auto mb-2 p-2 text-center" style="width: 80%; border: solid; border-radius: 3%;">
+                <form method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group text-left">
+                            {{ field.errors }}
+                            {{ field.label_tag }} {{ field }}
+                        </div>
+                    {% endfor %}
+                    <input class="btn btn-custom mt-2" style="width: 30%;" type="submit" value="submit">
+                </form>
+            </div>
+            {% endif %}
+        
+
+
+
+
+    </div>
+
+<!-- End Contact Us -->
+
+</div>
+
+{% endblock %}

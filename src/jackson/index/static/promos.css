@@ -1,0 +1,39 @@
+.padding-none {
+    padding: 0;
+}
+
+.ptitle {
+    background-color: #222; 
+    color: white;
+    padding-top: 0.5rem;
+    padding-bottom: 0.1rem;
+    margin: 0;
+}
+
+.promo {
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+}
+.promo:hover {
+    background-color: #cce6f4;
+}
+
+.expiration strong {
+    color: red;
+}
+
+.overlay-expired {
+    opacity: 0;
+    font-size: 3rem;
+    text-align: center;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+}
+
+.overlay-expired:hover {
+    opacity: 1;
+    color: white;
+    background-color: rgba(128, 128, 128, 0.5);
+}

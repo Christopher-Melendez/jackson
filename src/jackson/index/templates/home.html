@@ -1,0 +1,440 @@
+{% extends 'base.html'%}
+{% load i18n %}
+{% block title %}{% translate "Optical & Eye Doctor in Jackson Heights, Queens" %}{% endblock %}
+{% block activehome %}active{% endblock %}
+{% block body-content %}
+{% load static %}
+
+
+<script>
+    $( document ).ready(function() {
+
+// Carousel Controls
+
+$(".carousel").carousel({
+interval: false,
+pause: true
+});
+
+$( ".carousel .carousel-inner" ).swipe( {
+swipeLeft: function ( event, direction, distance, duration, fingerCount ) {
+this.parent( ).carousel( 'next' );
+},
+swipeRight: function ( ) {
+this.parent( ).carousel( 'prev' );
+},
+threshold: 0,
+/*
+tap: function(event, target) {
+window.location = $(this).find('.carousel-item.active a').attr('href');
+},
+*/
+excludedElements:"label, button, input, select, textarea, .noSwipe"
+} );
+
+$('.carousel .carousel-inner').on('dragstart', 'a', function () {
+return false;
+});  
+
+});
+</script>
+
+
+
+<!-- Promotions Carousel -->
+<div class="container-fluid">
+    <div class="row padding opening">
+        <div id="slides" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#slides" data-slide-to="0" class="active"></li>
+                <li data-target="#slides" data-slide-to="1"></li>
+                <li data-target="#slides" data-slide-to="2"></li>
+                <li data-target="#slides" data-slide-to="3"></li>
+                <li data-target="#slides" data-slide-to="4"></li>
+            </ul>
+            <div class="carousel-inner">
+                {% comment %} If Spanish {% endcomment %}
+                {% if LANGUAGE_CODE == LANGUAGES.1.0 %}
+                    {%for photo in photos %}
+                        {% if forloop.first %}
+                        {% comment %} First one Gets Active Tag {% endcomment %}
+                            <div class="carousel-item active">
+                        {% else %}
+                            <div class="carousel-item">
+                        {% endif %}
+                            <img class="card-img-top" src="{{photo.es_photo.url}}" alt={{photo.es_name}}>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    {%for photo in photos %}
+                        {% if forloop.first %}
+                        {% comment %} First one Gets Active Tag {% endcomment %}
+                            <div class="carousel-item active">
+                        {% else %}
+                            <div class="carousel-item">
+                        {% endif %}
+                            <img class="card-img-top" src="{{photo.en_photo.url}}" alt={{photo.en_name}}>
+                        </div>
+                    {% endfor %}
+
+                {%endif%}
+
+                <a class="carousel-control-prev" href="#slides" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#slides" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Practice Info & Desc  -->
+<div class="container-fluid padding">
+    <div class="row padding">
+        <div class="col-lg-6">
+            <h1>{% translate "Lens Lab Express" %}</h1>
+            <h4>{% translate "Eyeglasses, Eye Exams & Contact Lenses" %}</h4>
+            
+            <p>{%blocktrans%}
+                At Lens Lab Express, we pride ourselves with a wide variety of designer frames across various price points.
+                Additionally, we offer swift one-hour or next-day service for most prescriptions. Our doctors perform precision
+                contact lens fittings for sphere, astigmatic, and multifocal contact lens wearers. 
+                
+                Our Commitment to comprehensive eyecare extends to annual diabetic eye examinations, thorough glaucoma screenings,
+                dry eye management, and a range of medical treatments to ensure your ocular health is in expert hands.
+                {%endblocktrans%}</p>
+            <br>
+
+            
+            
+
+            <div class="container-fluid padding">
+                <div class="row text-center">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <img class="micon" src="{% static 'images/icons/phoropter.png' %}">
+                        <h4>{% translate "Blurry Vision Checks" %}</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <img class="micon" src="{% static 'images/icons/hospital.png' %}">
+                        <h4>{% translate "Diabetes & Glaucoma Screenings" %}</h4>
+                        
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <img class="micon" src="{% static 'images/icons/plus-sign-on-eye-ball.png' %}">
+                        <h4>{% translate "Medical Eye Care" %}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="https://pcols.com/!MTQ1MQ" class="btn btn-custom text-center">{% translate "Make an Appointment" %}</a>
+            </div>
+        </div>
+        <div class="col-lg-6 padding mx-auto text-center" style="max-width: 620px">
+            <img src="{% static 'images/storefront.png' %}" alt="Lens Lab Express Storefront" class="img-fluid mx-auto text-center">
+        </div>
+    </div>
+</div>
+
+<!-- Our Brands -->
+<div class="container-fluid" style="background-color: #2498DE">
+    <div class ="row">
+        <p class="mx-auto text-center" style="font-family: Quicksand; font-size: 3rem; color:#fff">{% translate "Our Brands" %}</p>
+    </div>
+    <hr style="margin-top:0; margin-bottom: 0;border: 1px solid black">
+    
+    <div class="row">
+        <img class="img-fluid mx-auto" alt="RayBan" src="{% static 'images/logos/rayban.png' %}">
+        <img class="img-fluid mx-auto" alt="Cazal" src="{% static 'images/logos/burberry.png' %}">
+        <img class="img-fluid mx-auto" alt="Fendi" src="{% static 'images/logos/fendi.png' %}">
+        <img class="img-fluid mx-auto" alt="Versace" src="{% static 'images/logos/versace.png' %}">
+    </div>
+    
+    <div class="row padding">
+        <a class="mx-auto" href="/about/"><button type="button" class="btn btn-lg btn-custom-alt">{% translate "View More Brands" %}</button></a>
+    </div>    
+</div>
+
+<!-- Insurance Table -->
+<div class="container-fluid padding">
+    <div class="row insurance text-center padding">
+        <div class="col-12">
+            <h1 class="display-4">{% translate "Accepeted Insurances" %}</h1>
+        </div>
+        <hr>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <p class="lead">1199</p>
+            <p class="lead">32-BJ</p>
+            <p class="lead">Affinity Health</p>
+            <p class="lead">Americhoice</p>
+            <p class="lead">Anthem Blue Cross Blue Shield</p>
+            <p class="lead">Block Vision</p>
+            <p class="lead">Carpenters Union</p>
+            <p class="lead">Davis Vision</p>
+            <p class="lead">Dc-37</p>
+            <p class="lead">Emblem Health</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <p class="lead">Eyemed Health</p>
+            <p class="lead">Fidelis</p>
+            <p class="lead">GVS</p>
+            <p class="lead">Health First</p>
+            <p class="lead">Local 6</p>
+            <p class="lead">Local 28</p>
+            <p class="lead">Local 97</p>
+            <p class="lead">Local 99</p>
+            <p class="lead">Local 100</p>
+            <p class="lead">Local 237</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <p class="lead">Local 272</p>
+            <p class="lead">Local 888</p>
+            <p class="lead">Local 1181</p>
+            <p class="lead">Local 1804-1814</p>
+            <p class="lead">Medicaid</p>
+            <p class="lead">Medicare</p>
+            <p class="lead">Metroplus</p>
+            <p class="lead">Spectera</p>
+            <p class="lead">UFT</p>
+            <p class="lead">United Health Care</p>
+        </div>
+        <div class="col-lg-12">
+            <p class="medium-text">{% translate "We also accept <strong>FSA</strong> plans (Flex Spending Accounts) and <strong>HSA</strong> plans (Health Spending Accounts)" %}</p>
+            <br>
+            <p class="medium-text">{% translate "If your plan is not mentioned, please call us and ask because we may accept it." %}</p>
+        </div>
+    </div>
+    <hr>
+</div>
+
+<!-- Reviews -->
+<div class="container-fluid padding">
+    <div class ="row mx-auto my-auto">
+        <h3 class="mx-auto mt-3">{% translate "What Our Patients Say" %}</h3>
+        
+    </div>
+    <div class ="row mx-auto my-auto">
+        
+        <hr class="light">
+    </div>
+    
+    <div id="reviewCarousel" class="carousel slide rv" data-ride="carousel">
+        <div class="carousel-inner rv" role="listbox">
+          
+        <!-- Carousel Item -->
+        {% for review in reviews %}
+          <div class="carousel-item {% if forloop.first %}active{% endif %} rv">
+            <div class="col-md-4">
+                <div class="card card-body">
+                        
+                        <div>
+                            <a href="{{review.link}}">
+                                <img style="max-width:40px; max-height:40px;" src="{{review.img}}" alt="profile image"> 
+                                {{review.author}}
+                            </a>
+                            <br>
+                                <i style="color:#FFD700"class="fa-solid fa-star"></i>
+                                <i style="color:#FFD700"class="fa-solid fa-star"></i>
+                                <i style="color:#FFD700"class="fa-solid fa-star"></i>
+                                <i style="color:#FFD700"class="fa-solid fa-star"></i>
+                                <i style="color:#FFD700"class="fa-solid fa-star"></i>
+                        </div>
+                        <div>
+                            <p>
+                                {% if LANGUAGE_CODE == LANGUAGES.1.0 %}
+                                    {{review.es_text}}
+                                    
+                                {% else %}
+                                    {{review.en_text}}
+                                {%endif%}  
+                            </p>
+                        </div>
+                        <div>
+                            
+                                <i class="fa-brands fa-google" style="background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+                                -webkit-background-clip: text;
+                                background-clip: text;
+                                color: transparent;
+                                -webkit-text-fill-color: transparent;"></i>
+                                <p>{% translate "Posted on" %}</p>
+                                <a href="{{review.link}}"><P>Google</P></a>
+                        </div>
+        
+                </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+</div>
+
+
+<script>
+
+$('#recipeCarousel').carousel({
+  interval: 10000
+})
+
+$('.carousel.rv .carousel-item.rv').each(function(){
+    var minPerSlide = 3;
+    var next = $(this).next();
+    if (!next.length) {
+    next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+    
+    for (var i=0;i<minPerSlide;i++) {
+        next=next.next();
+        if (!next.length) {
+        	next = $(this).siblings(':first');
+      	}
+        
+        next.children(':first-child').clone().appendTo($(this));
+      }
+});
+
+</script>
+
+<style>
+
+@media (max-width: 768px) {
+    .carousel-inner.rv .carousel-item.rv > div {
+        display: none;
+    }
+    .carousel-inner.rv .carousel-item.rv > div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner.rv .carousel-item.active.rv,
+.carousel-inner.rv .carousel-item-next.rv,
+.carousel-inner.rv .carousel-item-prev.rv {
+    display: flex;
+}
+
+/* display 3 */
+@media (min-width: 768px) {
+    
+    .carousel-inner.rv .carousel-item-right.active.rv,
+    .carousel-inner.rv .carousel-item-next.rv {
+      transform: translateX(33.333%);
+    }
+    
+    .carousel-inner.rv .carousel-item-left.active.rv, 
+    .carousel-inner.rv .carousel-item-prev.rv {
+      transform: translateX(-33.333%);
+    }
+}
+
+.carousel-inner.rv .carousel-item-right.rv,
+.carousel-inner.rv .carousel-item-left.rv{ 
+  transform: translateX(0);
+}
+</style>
+
+<!-- Mailing List Modal -->
+<script>
+function setCookie(cname,cvalue,exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*10*365*24*60*60));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  let couponbox_status = getCookie("couponbox");
+  if (couponbox_status == "accepted") {
+    
+  } else if (couponbox_status == "shown") {
+    
+  } else {
+    try {
+        $('#couponModal').modal('show')
+        setCookie("couponbox", "shown", 1);
+    } catch(error) {
+        console.error(error);
+        setCookie("couponbox", "unseen", 2038)
+    }
+  }
+}
+
+$(document).on('submit','#couponform',function(e){
+    if ($.trim($("#coupon_email").val()) === "") {
+        // alert('you did not fill out one of the fields');
+        return false;
+    }
+    e.preventDefault();
+    $.ajax({
+        type:'POST',
+        url:'{% url "home" %}',
+        data:
+        {
+            coupon_email:$("#coupon_email").val(),
+            csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+        },
+        success:function(){
+                {% comment %} alert('Saved'); {% endcomment %}
+                $("#signup").hide();
+                $("#signed_up").show();
+                setCookie("couponbox", "accepted", 2038)
+                }
+        })
+    });
+
+</script>
+  <div class="modal fade" id="couponModal" tabindex="-1" role="dialog" aria-labelledby="couponModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        
+        <div class="modal-body text-center">
+            <div id="signup">
+                <h5>{% translate "Eyeing Some New Eyewear?" %}</h5>
+                <hr>
+                <p>{% translate "Drop your email and get" %}</p>
+                <strong>{% translate "10% OFF" %}</strong>
+                <br><br>
+                <p>{% translate "Your next order with us!" %}</p>
+                <form method="POST" id="couponform" onsubmit="">
+                    {% csrf_token %}
+                    <input type="email" placeholder="{% translate "Enter Email Address" %}" id="coupon_email"name="coupon_email">
+                    <button name="contactsubmit" type="submit" class="btn btn-custom text-center">{% translate "Get Now" %}</button>
+                </form>
+            </div>
+            <div id="signed_up" style="display:none">
+                    <h5>{% translate "Thanks for joining us!" %}</h5>
+                    <hr>
+                    <p>{% translate "Please present this code" %}</p>
+                    <strong>NEWYEARNEWYOU82LLE</strong>
+                    <br><br>
+                    <p>{% translate "Either in store, or online (coming soon) to get 10% off your next purchase!" %}</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

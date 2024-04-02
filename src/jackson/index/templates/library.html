@@ -1,0 +1,121 @@
+{% extends 'base.html'%}
+{% load i18n %}
+{% block title %}{% translate "Eyecare Library" %}{% endblock %}
+{% block activelibrary %}active{% endblock %}
+{% block body-content %}
+
+<!-- Start Libary Header -->
+<div class="col-sm-12 text-center padding-none">
+    <div class="ltitle">
+        <a class="lita" href="/library/"><h1>{% translate "Eyecare Library" %}</h1></a>
+        <p class = "lip">{% translate "Find answers to your questions on contact lens care, glasses options, cataracts and more!" %}</p>
+        <p class = "lip">{% translate "Check back every month for our latest release!" %}</p>
+    </div>
+</div>
+<!-- End Library Header -->
+
+ <!-- Start Article Card -->
+{% for article in page_obj %}
+<div class="mx-3">
+    <div class="card mb-3">
+       <div class="row no-gutters">
+         <div class="col-md-4 text-center">
+           <a class="text-center" href="/article/{{article.slug}}"><img src="{{article.photo.url}}" class=" mx-auto my-auto card-img" alt="" style="max-height: 300px; max-width: 300px; height: auto; width: auto;"></a>
+         </div>
+         <div class="col-md-8">
+           <div class="card-body mx-3">
+            {% comment %} If Spanish {% endcomment %}
+            {% if LANGUAGE_CODE == LANGUAGES.1.0 %}
+             <a  class="lia" href="/article/{{article.slug}}"><h4 class="card-title">{{article.es_title}}</h4></a>
+             <p class="card-text"><small class="text-muted"><i class="fa-solid fa-calendar"></i> {{article.publish_date}}</small></p>
+             <hr class ="mx-0"style="border: 1px solid #222; width: 20%">
+               <br>
+               <ul>
+                   {% for tag in article.tags.all %}
+                   <li class="tag"><i class="fa-solid fa-tag"></i> {{tag.es_name}}</li>
+                   {% endfor %}
+
+              {% else %}
+              <a  class="lia" href="/article/{{article.slug}}"><h4 class="card-title">{{article.en_title}}</h4></a>
+              <p class="card-text"><small class="text-muted"><i class="fa-solid fa-calendar"></i> {{article.publish_date}}</small></p>
+              <hr class ="mx-0"style="border: 1px solid #222; width: 20%">
+                <br>
+                <ul>
+                    {% for tag in article.tags.all %}
+                    <li class="tag"><i class="fa-solid fa-tag"></i> {{tag.en_name}}</li>
+                    {% endfor %}
+              {% endif %}
+                   
+               </ul>
+           </div>
+         </div>
+       </div>
+     </div>
+</div>
+{% endfor %}
+<!-- End Article Card -->
+
+<!-- Start Page Selection -->
+<div class="pagination mx-auto px-auto">
+  <span class="step-links mx-auto">
+      {% if page_obj.has_previous %}
+          <a href="?page=1">&laquo; {% translate "Previous" %}</a>
+      {% endif %}
+
+      <span class="current">
+          {% translate "Page" %} {{ page_obj.number }} {% translate "of" %} {{ page_obj.paginator.num_pages }}.
+      </span>
+
+      {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.paginator.num_pages }}">{% translate "Next" %} &raquo;</a>
+      {% endif %}
+  </span>
+</div>
+<!-- End Page Selection -->
+
+
+<style>
+    .ltitle {
+        background-color: #2498DE; 
+        color: #222;
+        padding-top: 0.5rem;
+        padding-bottom: 0.1rem;
+        margin: 0;
+        border-radius: 15px;
+    }
+
+    .tag {
+        display: inline-block;
+        background: rgba(83, 83, 83, 0.4);
+        border-radius: 3px;
+        padding: 2.5px 10px;
+        margin: 0 5px 5px 0;
+        cursor: default;
+        user-select: none;
+        transition: background-color 0.3s;
+    }
+
+    .lip {
+      color:#FFF;
+    }
+
+    .lita {
+        color:#FFF;
+    }
+
+    .lita:hover {
+        color: #636363;
+    }
+
+    .lia {
+      color:#000;
+  }
+
+  .lia:hover {
+      color: #2498DE;
+  }
+
+
+</style>
+
+{% endblock %}
