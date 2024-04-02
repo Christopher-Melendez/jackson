@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-np-(7ux+u@%aom*jpg9^*$0rqp-yjf30^k!3edlnwb7nk&@3sw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.157']
+ALLOWED_HOSTS = ['192.168.1.157',
+                 '3.89.138.93']
 
 
 # Application definition
@@ -138,7 +139,7 @@ LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 
 STATIC_URL = 'static/'
 # SATICFILES_DIR = os.path.join(BASE_DIR, 'static')
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = '/var/www/llejh/assets/'
 
 
 MEDIA_URL = 'media/'
