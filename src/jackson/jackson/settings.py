@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-np-(7ux+u@%aom*jpg9^*$0rqp-yjf30^k!3edlnwb7nk&@3sw
 DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.1.157',
-                 '3.89.138.93']
+                 '54.159.84.137']
 
 
 # Application definition
